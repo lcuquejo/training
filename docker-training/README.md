@@ -2,7 +2,8 @@ Useful docker commands
 
 To deploy a docker-compose stack
 $ docker-compose up -d
-or
+
+or (Docker Swarm)
 $ docker stack deploy -c docker-compose.yml  myStack
 
 To stop the docker-compose stack
