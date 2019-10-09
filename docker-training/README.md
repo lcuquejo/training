@@ -4,6 +4,7 @@
 $ docker-compose up -d
 
 or (Docker Swarm)
+
 $ docker stack deploy -c docker-compose.yml  myStack
 
 ## To stop the docker-compose stack
@@ -20,7 +21,9 @@ $ docker ps -a
 
 ## How to access a running container
 $ docker exec -it  {CONTAINER ID} /bin/bash
+
 or 
+
 $ docker exec -it  {CONTAINER ID} /bin/sh 
 
 ## Delete a container
