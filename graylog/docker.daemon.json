@@ -1,0 +1,5 @@
+  "log-driver": "syslog",
+  "log-opts": {
+    "syslog-address": "tcp://localhost:5144",
+    "syslog-format": "rfc5424"
+  }

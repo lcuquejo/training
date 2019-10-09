@@ -1,0 +1,29 @@
+version: '3.1'
+
+services:
+
+  db:
+    image: postgres:11
+
+    ports:
+      - 5433:5432
+    environment:
+      POSTGRES_PASSWORD: mysafepass
+    volumes:
+    - ./docker/db-data:/var/lib/postgresql/data
+
+  pgadmin:
+    image: dpage/pgadmin4
+    ports:
+      - 8888:80
+    # links:
+    #   - db:db
+    environment:
+      PGADMIN_DEFAULT_PASSWORD: mysafepass
+      PGADMIN_DEFAULT_EMAIL: admin@admin.admin
+    volumes:
+    - ./docker/db-gui:/var/lib/pgadmin
+
+
+
+# docker run -d --name db -v ./docker/db-data:/var/lib/postgresql/data -p 5433:5432 postgres:11
