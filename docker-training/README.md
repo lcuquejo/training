@@ -3,10 +3,6 @@
 ## To deploy a docker-compose stack
 $ docker-compose up -d
 
-or (Docker Swarm)
-
-$ docker stack deploy -c docker-compose.yml  myStack
-
 ## To stop the docker-compose stack
 $ docker-compose stop
 
@@ -50,9 +46,30 @@ $ docker logs  {CONTAINER ID}
 ## Show last lines 10 of log 
 $ docker logs --tail 10 -f  {CONTAINER ID}
 
+# Docker Swarm (Cluster)
+## Show cluster nodes
+$ docker node ls
+
+## Generate manager | worker token
+$ docker swarm join-token (worker|manager)
+
+## Show services
+$ docker service ls
+
+## Show where the service is running
+$ dockser service ps {SERVICE ID}
+
+## List stacks
+$ docker stack ls
+
+## Delete a stack
+$ docker stack rm {STACK ID}
+
 # CAUTION #
 ## Stop all running containers
 $ docker stop $(docker ps -a -q)
 
 ## Delete all containers
 $ docker rm $(docker ps -a -q)
+
+
