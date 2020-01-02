@@ -59,6 +59,11 @@ $ docker swarm join-token (worker|manager)
 ## Exit from a cluster
 $ docker swarm leave
 
+## Drain a node in swarm
+$ docker node update --availability drain {NODE_ID}
+## Back the note to active
+docker node update --availability active  {NODE_ID}
+
 ## Show services
 $ docker service ls
 

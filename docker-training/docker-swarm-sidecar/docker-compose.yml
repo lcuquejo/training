@@ -1,0 +1,33 @@
+version: '3.1'
+
+services:
+
+  postgresdb:
+    image: postgres:11
+    environment:
+      POSTGRES_PASSWORD: mysafepass
+    volumes:
+    - ./docker/db-data:/var/lib/postgresql/data
+
+  database_jump_sidecar:
+    image: alpine/socat:latest
+    command: "tcp-l:5555,fork,reuseaddr tcp:postgresdb:5432"
+    deploy:
+      replicas: 0
+      resources:
+        limits:
+          cpus: '0.1'
+          memory: 128M
+    ports:
+      - 5555:5555
+
+  pgadmin:
+    image: dpage/pgadmin4
+    ports:
+      - 8888:80
+    environment:
+      PGADMIN_DEFAULT_PASSWORD: mysafepass
+      PGADMIN_DEFAULT_EMAIL: admin@admin.admin
+    volumes:
+    - ./docker/db-gui:/var/lib/pgadmin
+
