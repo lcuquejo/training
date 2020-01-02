@@ -50,8 +50,14 @@ $ docker logs --tail 10 -f  {CONTAINER ID}
 ## Show cluster nodes
 $ docker node ls
 
+## Create a new cluster
+$ docker swarm init
+
 ## Generate manager | worker token
 $ docker swarm join-token (worker|manager)
+
+## Exit from a cluster
+$ docker swarm leave
 
 ## Show services
 $ docker service ls
