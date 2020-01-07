@@ -59,6 +59,9 @@ $ docker swarm join-token (worker|manager)
 ## Exit from a cluster
 $ docker swarm leave
 
+## Increase Service Replicas
+$ docker service scale database_jump_sidecar=1
+
 ## Drain a node in swarm
 $ docker node update --availability drain {NODE_ID}
 ## Back the note to active
