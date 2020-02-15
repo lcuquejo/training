@@ -7,7 +7,7 @@ services:
     environment:
       POSTGRES_PASSWORD: mysafepass
     volumes:
-    - ./docker/db-data:/var/lib/postgresql/data
+    - /var/share/training/sidec/db-data:/var/lib/postgresql/data
 
   database_jump_sidecar:
     image: alpine/socat:latest
@@ -29,5 +29,5 @@ services:
       PGADMIN_DEFAULT_PASSWORD: mysafepass
       PGADMIN_DEFAULT_EMAIL: admin@admin.admin
     volumes:
-    - ./docker/db-gui:/var/lib/pgadmin
+    - /var/share/training/sidec/db-gui:/var/lib/pgadmin
 
