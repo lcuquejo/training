@@ -13,7 +13,7 @@ services:
     - ./docker/db-data:/var/lib/mysql 
 
   myjavaapp:
-    build: ./docker
+    build: ./javaapp
     image: myjavaapp:0.1
     # environment:
     #   - APP_ENV=dev
