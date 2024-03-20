@@ -15,3 +15,8 @@ cp files/index.php /var/www/html
 ```
 docker stack deploy -c docker-compose.yml myweb
 ```
+
+# Using docker-compose - NO SWARM (alternative)
+```
+docker-compose up -d
+```
