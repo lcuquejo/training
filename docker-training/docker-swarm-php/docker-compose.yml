@@ -18,13 +18,11 @@ services:
     networks:
       - training
 
-  nginx2:
-    image: nginx:latest
-    ports:
-      - "8888:80"
+  alpine_container:
+    image: alpine:latest
+    command: tail -f /dev/null  # Keeps the container running
     networks:
       - training
-
 
 networks:
   training:
