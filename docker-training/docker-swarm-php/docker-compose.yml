@@ -29,5 +29,5 @@ services:
 networks:
   training:
     driver: overlay
-    attachable: false
+    attachable: true
     internal: true
