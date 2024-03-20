@@ -11,12 +11,12 @@ cp files/nginx.conf /var/www/conf
 cp files/index.php /var/www/html
 ```
 
-# Starting the stack
-```
-docker stack deploy -c docker-compose.yml myweb
-```
-
 # Using docker-compose - NO SWARM (alternative)
 ```
 docker-compose up -d
+```
+
+# Starting the stack - When using SWARM
+```
+docker stack deploy -c docker-compose.yml myweb
 ```
