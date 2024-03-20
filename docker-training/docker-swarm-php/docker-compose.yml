@@ -31,8 +31,8 @@ networks:
     driver: overlay
     attachable: true
     internal: true
-    ipam:
-      config:
-        - subnet: 172.66.66.0/24
+    # ipam:
+    #   config:
+    #     - subnet: 172.66.66.0/24
     driver_opts:
       encrypted: "true"
