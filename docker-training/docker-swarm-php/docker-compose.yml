@@ -20,3 +20,6 @@ services:
 
 networks:
   training:
+    driver: bridge
+  common:
+    external: true
