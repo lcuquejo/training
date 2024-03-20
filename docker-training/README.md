@@ -18,9 +18,9 @@ $ docker ps -a
 ## How to access a running container
 $ docker exec -it  {CONTAINER ID} /bin/bash
 
-or 
+or
 
-$ docker exec -it  {CONTAINER ID} /bin/sh 
+$ docker exec -it  {CONTAINER ID} /bin/sh
 
 ## Delete a container
 $ docker rm {CONTAINER ID}
@@ -43,10 +43,13 @@ $ docker run --network test_default -it --name test  debian:latest /bin/bash
 ## Show all container  logs
 $ docker logs  {CONTAINER ID}
 
-## Show last lines 10 of log 
+## Show last lines 10 of log
 $ docker logs --tail 10 -f  {CONTAINER ID}
 
 # Docker Swarm (Cluster)
+
+Swarm official tutorial [https://docs.docker.com/engine/swarm/swarm-tutorial/deploy-service/]
+
 ## Show cluster nodes
 $ docker node ls
 
