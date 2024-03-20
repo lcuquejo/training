@@ -18,6 +18,14 @@ services:
     networks:
       - training
 
+  nginx2:
+    image: nginx:latest
+    ports:
+      - "8888:80"
+    networks:
+      - training
+
+
 networks:
   training:
     driver: overlay
