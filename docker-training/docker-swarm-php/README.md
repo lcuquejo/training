@@ -8,7 +8,7 @@ mkdir -p /var/www/conf
 ## Copy the example files
 ```
 cp files/nginx.conf /var/www/conf
-cp files/index.php /var/www/html
+cp files/*.php /var/www/html
 ```
 
 # Using docker-compose - NO SWARM (alternative)
