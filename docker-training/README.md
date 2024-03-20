@@ -47,6 +47,17 @@ $ docker logs  {CONTAINER ID}
 $ docker logs --tail 10 -f  {CONTAINER ID}
 
 # Docker Swarm (Cluster)
+# Preparing the env
+Make sure that you have a swarm cluster up.
+
+```
+$ docker node ls
+```
+
+Or create a new cluster by:
+```
+$ docker swarm init --default-addr-pool 172.66.66.0/16
+```
 
 Swarm official tutorial [https://docs.docker.com/engine/swarm/swarm-tutorial/deploy-service/]
 
@@ -89,4 +100,18 @@ $ docker stop $(docker ps -a -q)
 ## Delete all containers
 $ docker rm $(docker ps -a -q)
 
+# Fix the docker address-pool:
+```
+cat <<EOF | sudo tee /etc/docker/daemon.json
+{
+  "default-address-pools": [
+    {
+      "base": "172.66.66.0/16",
+      "size": 24
+    }
+  ]
+}
+EOF
 
+systemctl restart docker
+```
